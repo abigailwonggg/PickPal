@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">PickPal</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="view_more">View More</string>
+    <string name="title_of_the_post">Title of the Post</string>
+    <string name="username">Username</string>
+    <string name="user_icon">User Icon</string>
+    <string name="delete">Delete</string>
 </resources>
