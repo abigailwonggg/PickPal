@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_welcome_screen"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/container_welcome_screen">
+
+    <!-- PickPal Logo  -->
+    <ImageView
+        android:id="@+id/image_pick_pal_logo"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="360dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="729dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/pickpal_logo" />
+
+    <!-- Main Text -->
+    <TextView
+        android:id="@+id/text_ready_to"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="102dp"
+        android:layout_marginTop="110dp"
+        android:gravity="left|center_vertical"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="Ready to"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="#FFFFFFFF"
+        android:shadowColor="#313145"
+        android:shadowDx="3"
+        android:shadowDy="8"
+        android:shadowRadius="10"
+        android:textSize="40dp" />
+
+    <TextView
+        android:id="@+id/text_make_choices"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="-61dp"
+        android:layout_marginTop="147dp"
+        android:layout_marginBottom="554dp"
+        android:gravity="left|center_vertical"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="make choices"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="#FFFFFFFF"
+        android:shadowColor="#313145"
+        android:shadowDx="3"
+        android:shadowDy="8"
+        android:shadowRadius="10"
+        android:textSize="40dp" />
+
+    <TextView
+        android:id="@+id/text_with_your_pals"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="-39dp"
+        android:layout_marginTop="185dp"
+        android:layout_marginBottom="516dp"
+        android:gravity="left|center_vertical"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="with your pals?"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="#FFFFFFFF"
+        android:shadowColor="#313145"
+        android:shadowDx="3"
+        android:shadowDy="8"
+        android:shadowRadius="10"
+        android:textSize="40dp" />
+
+    <!--Orange Polygon-->
+
+    <ImageView
+        android:id="@+id/container_polygon"
+        android:layout_width="match_parent"
+        android:layout_height="1050dp"
+        android:layout_marginLeft="-346.13dp"
+        android:layout_marginTop="172dp"
+        android:layout_marginRight="-320.04dp"
+        android:layout_marginBottom="-416dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/container_polygon" />
+
+    <!-- User Interaction Buttons -->
+
+    <!--Login Button -->
+    <LinearLayout
+        android:id="@+id/container_login_button"
+        android:layout_width="147dp"
+        android:layout_height="41dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="184dp"
+        android:layout_marginTop="620dp"
+        android:layout_marginBottom="118dp"
+        android:background="@drawable/container_login_button"
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="45dp"
+        android:paddingRight="45dp">
+
+        <TextView
+            android:id="@+id/text_login"
+            android:layout_width="93dp"
+            android:layout_height="40dp"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center|center_vertical"
+            android:includeFontPadding="false"
+            android:lineHeight="40dp"
+            android:maxLines="1"
+            android:text="Login"
+            android:textColor="#FFEF7035"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+    <!--Sign Up Button -->
+    <LinearLayout
+        android:id="@+id/container_sign_up_button"
+        android:layout_width="147dp"
+        android:layout_height="41dp"
+        android:layout_marginLeft="215dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginTop="620dp"
+        android:layout_marginBottom="118dp"
+        android:background="@drawable/container_sign_up_button"
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="45dp"
+        android:paddingRight="45dp">
+
+        <TextView
+            android:id="@+id/text_sign_up"
+            android:layout_width="106dp"
+            android:layout_height="40dp"
+            android:gravity="center|center_vertical"
+            android:includeFontPadding="false"
+            android:lineHeight="40dp"
+            android:maxLines="1"
+            android:text="Sign Up"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="#FFFFFFFF"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+    <!--Welcome Screen Element-->
+    <ImageView
+        android:id="@+id/image_figma_elements"
+        android:layout_width="560dp"
+        android:layout_height="380dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="240dp"
+        android:layout_marginLeft="-65dp"
+        android:layout_marginRight="500dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/welcome_screen_1" />
+
+</FrameLayout>
