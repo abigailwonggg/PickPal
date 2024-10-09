@@ -5,13 +5,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
-public class WelcomeScreen extends MainActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class WelcomeScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.container_welcome_screen);
 
-        // Find the FrameLayout by its ID
+        // Find the login button by its ID
         LinearLayout loginButton = findViewById(R.id.container_login_button);
 
         // Set an OnClickListener to the login button
@@ -21,12 +23,8 @@ public class WelcomeScreen extends MainActivity {
                 // Start the LoginScreen activity
                 Intent intent = new Intent(WelcomeScreen.this, LoginScreen.class);
                 startActivity(intent);
+                finish(); // Close WelcomeScreen so it won't appear when back button is pressed
             }
         });
-
-    }
-
-    @Override
-    protected void onViewCreated() {
     }
 }
