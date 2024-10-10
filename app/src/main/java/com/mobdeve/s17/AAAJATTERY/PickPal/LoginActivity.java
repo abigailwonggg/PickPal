@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        ImageView backButton = findViewById(R.id.img_back_button);
+        ImageView backButton = findViewById(R.id.back_button);
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
 
