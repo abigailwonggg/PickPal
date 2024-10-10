@@ -3,6 +3,7 @@ package com.mobdeve.s17.AAAJATTERY.PickPal;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.EditText;
@@ -32,8 +33,10 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        TextView loginButton = findViewById(R.id.txt_login);
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        Button btn_login = findViewById(R.id.btn_login);
+        TextView signup_link = findViewById(R.id.signup_link);
+
+        btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -50,6 +53,15 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(i);
                     finish();
                 }
+            }
+        });
+
+        signup_link.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, Signup1Activity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }

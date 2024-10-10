@@ -2,8 +2,6 @@
 
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container_welcome_screen"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -21,9 +19,9 @@
         android:scaleType="centerInside"
         android:src="@drawable/pickpal_logo" />
 
-    <!-- Main Text -->
+    <!-- Header Text -->
     <TextView
-        android:id="@+id/text_ready_to"
+        android:id="@+id/header_line1"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_marginLeft="19dp"
@@ -43,7 +41,7 @@
         android:textSize="45dp" />
 
     <TextView
-        android:id="@+id/text_make_choices"
+        android:id="@+id/header_line2"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_marginLeft="17dp"
@@ -64,7 +62,7 @@
         android:textSize="45dp" />
 
     <TextView
-        android:id="@+id/text_with_your_pals"
+        android:id="@+id/header_line3"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_marginLeft="17dp"
@@ -100,62 +98,38 @@
     <!-- User Interaction Buttons -->
 
     <!--Login Button -->
-    <LinearLayout
-        android:id="@+id/container_login_button"
+    <Button
+        android:id="@+id/btn_login"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginLeft="55dp"
         android:layout_marginRight="184dp"
         android:layout_marginTop="740dp"
         android:background="@drawable/container_login_button"
-        android:clipToPadding="false"
         android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingLeft="45dp"
-        android:paddingRight="45dp">
+        android:text="Login"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="#FFEF7035"
+        android:textSize="25dp"
+        android:textAllCaps="false" />
 
-        <TextView
-            android:id="@+id/text_login"
-            android:layout_width="93dp"
-            android:layout_height="40dp"
-            android:fontFamily="@font/poppins_bold"
-            android:gravity="center|center_vertical"
-            android:includeFontPadding="false"
-            android:lineHeight="40dp"
-            android:maxLines="1"
-            android:text="Login"
-            android:textColor="#FFEF7035"
-            android:textSize="25dp" />
-    </LinearLayout>
 
-    <!--Sign Up Button -->
-    <LinearLayout
-        android:id="@+id/container_sign_up_button"
+    <!-- Sign Up button -->
+    <Button
+        android:id="@+id/btn_signup"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginLeft="215dp"
         android:layout_marginRight="28dp"
         android:layout_marginTop="740dp"
         android:background="@drawable/container_sign_up_button"
-        android:clipToPadding="false"
         android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingLeft="45dp"
-        android:paddingRight="45dp">
+        android:text="Sign Up"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="#FFFFFFFF"
+        android:textSize="25dp"
+        android:textAllCaps="false" />
 
-        <TextView
-            android:id="@+id/text_sign_up"
-            android:layout_width="106dp"
-            android:layout_height="40dp"
-            android:gravity="center|center_vertical"
-            android:includeFontPadding="false"
-            android:lineHeight="40dp"
-            android:maxLines="1"
-            android:text="Sign Up"
-            android:fontFamily="@font/poppins_bold"
-            android:textColor="#FFFFFFFF"
-            android:textSize="25dp" />
-    </LinearLayout>
 
     <!--Welcome Screen Element-->
     <ImageView

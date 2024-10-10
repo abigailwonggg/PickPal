@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Signup1Activity"
+    android:background="@drawable/container_login">
+
+    <!-- Ellipses on the bg -->
+    <ImageView
+        android:id="@+id/img_ellipse1"
+        android:layout_width="257dp"
+        android:layout_height="240dp"
+        android:layout_marginLeft="199dp"
+        android:layout_marginTop="-63dp"
+        android:layout_gravity="top|left"
+        android:background="@drawable/img_ellipse1"
+        android:scaleType="centerInside" />
+
+    <ImageView
+        android:id="@+id/img_ellipse2"
+        android:layout_width="600dp"
+        android:layout_height="450dp"
+        android:layout_marginLeft="-93dp"
+        android:layout_marginTop="550dp"
+        android:layout_gravity="top|left"
+        android:background="@drawable/img_ellipse2"
+        android:scaleType="centerInside" />
+
+    <ImageView
+        android:id="@+id/img_ellipse3"
+        android:layout_width="284dp"
+        android:layout_height="273dp"
+        android:layout_marginLeft="180dp"
+        android:layout_marginTop="700dp"
+        android:layout_gravity="top|left"
+        android:background="@drawable/img_ellipse3"
+        android:scaleType="centerInside" />
+
+    <!-- PickPal Logo  -->
+    <ImageView
+        android:id="@+id/image_pick_pal_logo"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="360dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="729dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/pickpal_logo" />
+
+    <!--back button-->
+    <ImageView
+        android:id="@+id/img_back_button"
+        android:layout_width="34.13dp"
+        android:layout_height="33.45dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="18dp"
+        android:layout_gravity="top|left"
+        android:scaleType="centerInside"
+        android:src="@drawable/img_back_button" />
+
+    <!-- Sign Up Text -->
+    <TextView
+        android:id="@+id/signup_header"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="224dp"
+        android:layout_marginBottom="518dp"
+        android:gravity="left|center_vertical"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="Sign Up!"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="#FFFFFFFF"
+        android:textSize="35dp" />
+
+    <TextView
+        android:id="@+id/signup_subheader"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="265dp"
+        android:layout_gravity="top|left"
+        android:gravity="left|center_vertical"
+        android:includeFontPadding="false"
+        android:lineHeight="40dp"
+        android:maxLines="1"
+        android:text="Hey Pal! Let's get started"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="#FFFFFFFF"
+        android:textSize="15dp" />
+
+    <!-- Input Fields -->
+    <LinearLayout
+        android:id="@+id/container_inputFields"
+        android:layout_width="330.12dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="318dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/label_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="Username"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="#FFFFFFFF"
+            android:textSize="15sp" />
+
+        <FrameLayout
+            android:id="@+id/container_username_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/container_input_box">
+
+            <ImageView
+                android:id="@+id/username_box"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/input_box"
+                android:scaleType="centerCrop" />
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_gravity="start"
+                android:gravity="start|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:hint="Enter your username"
+                android:inputType="textPersonName"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="#FF000000"
+                android:textSize="17sp" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/label_firstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="start"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="First Name"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="#FFFFFFFF"
+            android:textSize="15sp" />
+
+        <FrameLayout
+            android:id="@+id/container_firstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/container_input_box">
+
+            <ImageView
+                android:id="@+id/firstName_box"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/input_box"
+                android:scaleType="centerCrop" />
+
+            <EditText
+                android:id="@+id/firstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_gravity="start"
+                android:gravity="start|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:hint="Enter your first name"
+                android:inputType="textPersonName"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="#FF000000"
+                android:textSize="17sp" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/label_lastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="start"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="Last Name"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="#FFFFFFFF"
+            android:textSize="15sp" />
+
+        <FrameLayout
+            android:id="@+id/container_lastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/container_input_box">
+
+            <ImageView
+                android:id="@+id/lastName_box"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/input_box"
+                android:scaleType="centerCrop" />
+
+            <EditText
+                android:id="@+id/lastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_gravity="start"
+                android:gravity="start|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:hint="Enter your last name"
+                android:inputType="textPersonName"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="#FF000000"
+                android:textSize="17sp" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/label_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="start"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="Email"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="#FFFFFFFF"
+            android:textSize="15sp" />
+
+        <FrameLayout
+            android:id="@+id/container_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/container_input_box">
+
+            <ImageView
+                android:id="@+id/email_box"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/input_box"
+                android:scaleType="centerCrop" />
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_gravity="start"
+                android:gravity="start|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:hint="Enter your email"
+                android:inputType="textEmailAddress"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="#FF000000"
+                android:textSize="17sp" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <!-- Redirect to Login Page -->
+    <TextView
+        android:id="@+id/login_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="613dp"
+        android:layout_gravity="top|left"
+        android:gravity="left|center_vertical"
+        android:includeFontPadding="false"
+        android:lineHeight="40dp"
+        android:maxLines="1"
+        android:text="Already a user?"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="#FFFFFFFF"
+        android:textSize="13dp" />
+
+    <TextView
+        android:id="@+id/login_link"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="135dp"
+        android:layout_marginTop="612dp"
+        android:layout_gravity="top|left"
+        android:gravity="left|center_vertical"
+        android:includeFontPadding="false"
+        android:lineHeight="40dp"
+        android:text="Login!"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="#FFFFFFFF"
+        android:textSize="13dp" />
+
+    <!-- Next Button -->
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="120dp"
+        android:layout_height="43dp"
+        android:layout_marginRight="57dp"
+        android:layout_marginTop="670dp"
+        android:layout_gravity="right"
+        android:background="@drawable/img_rectangle"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:textColor="#FFEF7035"
+        android:textSize="25dp" />
+
+
+</FrameLayout>
+
