@@ -9,4 +9,9 @@
         <item name="android:windowMinWidthMajor">90%</item>
         <item name="android:windowMinWidthMinor">90%</item>
     </style>
+    <style name="CustomSearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="android:background">@color/lilac</item>
+        <item name="android:padding">0dp</item>
+        <item name="queryBackground">@android:color/transparent</item>
+    </style>
 </resources>
