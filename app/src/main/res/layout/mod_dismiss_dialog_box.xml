@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/mod_dialog_background">
+
+    <TextView
+        android:id="@+id/delete_post_message"
+        android:fontFamily="@font/poppins_semibold"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="By dismissing this report, you certify that the post is NOT harmful to PickPal community"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:lineHeight="25sp"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/delete_post_sub_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:textAlignment="center"
+        android:text="Actions can not be undone. Report will be dismissed."
+        android:textSize="14sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginTop="5dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancel"
+            android:textColor="@android:color/white"
+            android:background="@drawable/cancel_button"/>
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Dismiss Post"
+            android:textColor="@android:color/white"
+            android:background="@drawable/mod_dismiss_button"
+            android:layout_marginStart="10dp"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -13,11 +13,12 @@
         android:theme="@style/Theme.PickPal"
         tools:targetApi="31">
         <activity
-            android:name=".Signup1Activity"
+            android:name=".ClubsActivity"
             android:exported="false" />
         <activity
-            android:name=".ModeratorModule"
+            android:name=".Signup1Activity"
             android:exported="false" />
+        <activity android:name=".ModeratorModule" />
         <activity
             android:name=".WelcomeActivity"
             android:exported="true">

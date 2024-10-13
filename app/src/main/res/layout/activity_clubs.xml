@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:background="@color/lilac"
-    tools:context=".ModeratorModule">
+    tools:context=".ClubsActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -49,27 +48,6 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/moderator_dashboard"
-        android:textColor="@color/purple"
-        android:textSize="42sp"
-        android:layout_gravity="start"
-        android:lineSpacingMultiplier="0.8"
-        android:fontFamily="@font/poppins_bold"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="56dp" />
+    
 
-    <!-- RecyclerView for displaying reports -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_reports"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="15dp"
-        tools:listitem="@layout/report_list"
-        android:padding="8dp"
-        android:clipToPadding="false" />
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
