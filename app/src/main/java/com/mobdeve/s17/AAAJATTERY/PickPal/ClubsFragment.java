@@ -1,15 +1,16 @@
 package com.mobdeve.s17.AAAJATTERY.PickPal;
 
+import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,9 +41,5 @@ public class ClubsFragment extends Fragment {
         recyclerView.setAdapter(clubsAdapter);
 
         return view;
-    }
-
-    public void bckBtn(View v) {
-        getActivity().finish(); // Use getActivity() to finish the activity from fragment
     }
 }

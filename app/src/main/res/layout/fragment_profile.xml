@@ -3,26 +3,213 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/profile_bg"
     tools:context=".ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- Toolbar Section -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:text="Profile Page" />
-
-    <Button
-        android:id="@+id/viewdashboard"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="80dp"
-        android:text="I am a moderator"
-        android:backgroundTint="@color/green"
-        android:textColor="@color/white"
-        android:onClick="viewModDash"/>
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <Button
+            android:id="@+id/modButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="85dp"
+            android:background="@drawable/mod_dashb_btn_bg"
+            android:fontFamily="@font/poppins_semibold"
+            android:minHeight="35dp"
+            android:layout_marginTop="20dp"
+            android:paddingStart="25dp"
+            android:paddingEnd="25dp"
+            android:text="@string/moderator_dashboard_btn"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:onClick="viewModDash"/>
+
+        <ImageView
+            android:id="@+id/image_pick_pal_logo"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/pickpal_logo"
+            android:gravity="end"
+            android:layout_marginStart="350dp"
+            android:contentDescription="@string/back_button" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Main Content: Profile Info and Cards -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:padding="16dp">
+
+        <!-- Inner Layout for Profile Content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Profile Picture -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/profile_image"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:src="@drawable/user_pic"
+                android:layout_marginTop="30dp"
+                app:shapeAppearanceOverlay="@style/CircleImageView"/>
+
+            <!-- Username -->
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Purple"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:textColor="@android:color/black"/>
+
+            <!-- Handle -->
+            <TextView
+                android:id="@+id/user_handle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/username_tag"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="16sp"
+                android:textColor="@color/gray"/>
+
+            <!-- Joined Date -->
+            <TextView
+                android:id="@+id/joined_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Joined January 1, 2024"
+                android:textSize="12sp"
+                android:textColor="@color/gray"
+                android:fontFamily="@font/poppins_medium"
+                />
+
+            <!-- Follower/Following/Post Stats -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp"
+                android:gravity="center">
+
+                <!-- Followers -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/followers_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/purple"
+                        android:text="122"
+                        android:textSize="22sp"
+                        android:fontFamily="@font/poppins_bold"/>
+
+                    <TextView
+                        android:id="@+id/followers_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Followers"
+                        android:textColor="@color/gray"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/poppins_medium"/>
+
+                </LinearLayout>
+
+                <!-- Spacer -->
+                <View
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"/>
+
+                <!-- Following -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/following_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/purple"
+                        android:text="24"
+                        android:textSize="22sp"
+                        android:fontFamily="@font/poppins_bold"/>
+
+                    <TextView
+                        android:id="@+id/following_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Following"
+                        android:textColor="@color/gray"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/poppins_medium"/>
+
+                </LinearLayout>
+
+                <!-- Spacer -->
+                <View
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"/>
+
+                <!-- Posts -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/posts_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10"
+                        android:textSize="22sp"
+                        android:textColor="@color/purple"
+                        android:fontFamily="@font/poppins_bold"/>
+
+                    <TextView
+                        android:id="@+id/posts_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Posts"
+                        android:textSize="16sp"
+                        android:textColor="@color/gray"
+                        android:fontFamily="@font/poppins_medium"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Cards Section (List of Posts) -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                tools:listitem="@layout/post_list"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </FrameLayout>

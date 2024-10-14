@@ -2,12 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lilac"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/lilac">
 
+    <!-- Toolbar (Static) -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -16,17 +16,9 @@
         app:titleTextColor="@android:color/white"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-        <ImageButton
-            android:id="@+id/back_button"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/back_button"
-            android:onClick="bckBtn"
-            android:contentDescription="@string/back_button" />
-
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/user_icon"
+            android:clickable="true"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginEnd="10dp"
@@ -48,7 +40,7 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <!-- Search Bar -->
+    <!-- Search Bar (Static) -->
     <androidx.appcompat.widget.SearchView
         android:id="@+id/search_bar"
         android:layout_width="match_parent"
@@ -59,140 +51,154 @@
         app:queryHint="Search..."
         style="@style/CustomSearchViewStyle"/>
 
-
-    <!-- Static Category Buttons -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingVertical="4dp"
-            android:gravity="center">
-
-            <!-- Category Buttons -->
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Anime &amp; Cosplay"
-                android:background="@drawable/category_button_background"
-                android:paddingHorizontal="8dp"
-                android:layout_margin="1dp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/poppins_semibold"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Music"
-                android:background="@drawable/category_button_background"
-                android:paddingHorizontal="8dp"
-                android:layout_margin="1dp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/poppins_semibold"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Movies"
-                android:background="@drawable/category_button_background"
-                android:paddingHorizontal="8dp"
-                android:layout_margin="1dp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/poppins_semibold"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingVertical="4dp"
-            android:gravity="center">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Food"
-                android:background="@drawable/category_button_background"
-                android:paddingHorizontal="8dp"
-                android:layout_margin="1dp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/poppins_semibold"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Education &amp; Career"
-                android:background="@drawable/category_button_background"
-                android:paddingHorizontal="8dp"
-                android:layout_margin="1dp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/poppins_semibold"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/category_button_background"
-                android:paddingHorizontal="8dp"
-                android:text="Art"
-                android:layout_margin="1dp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/poppins_semibold"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingVertical="4dp"
-            android:gravity="center">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Technology"
-                android:background="@drawable/category_button_background"
-                android:paddingHorizontal="8dp"
-                android:layout_margin="1dp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/poppins_semibold"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Games"
-                android:background="@drawable/category_button_background"
-                android:paddingHorizontal="8dp"
-                android:layout_margin="1dp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/poppins_semibold"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sports"
-                android:background="@drawable/category_button_background"
-                android:paddingHorizontal="8dp"
-                android:layout_margin="1dp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/poppins_semibold"/>
-
-        </LinearLayout>
-    </LinearLayout>
-
-
-    <!-- RecyclerView for Clubs -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_clubs"
+    <!-- Scrollable Content -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        tools:listitem="@layout/club_list" />
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="2dp">
+
+            <!-- Static Category Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <!-- Category Buttons -->
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Anime &amp; Cosplay"
+                        android:background="@drawable/category_button_background"
+                        android:paddingHorizontal="8dp"
+                        android:layout_margin="1dp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/poppins_semibold"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Music"
+                        android:background="@drawable/category_button_background"
+                        android:paddingHorizontal="8dp"
+                        android:layout_margin="1dp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/poppins_semibold"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Movies"
+                        android:background="@drawable/category_button_background"
+                        android:paddingHorizontal="8dp"
+                        android:layout_margin="1dp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/poppins_semibold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="2dp"
+                    android:gravity="center">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Food"
+                        android:background="@drawable/category_button_background"
+                        android:paddingHorizontal="8dp"
+                        android:layout_margin="1dp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/poppins_semibold"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Education &amp; Career"
+                        android:background="@drawable/category_button_background"
+                        android:paddingHorizontal="8dp"
+                        android:layout_margin="1dp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/poppins_semibold"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Art"
+                        android:background="@drawable/category_button_background"
+                        android:paddingHorizontal="8dp"
+                        android:layout_margin="1dp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/poppins_semibold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="2dp"
+                    android:gravity="center">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Technology"
+                        android:background="@drawable/category_button_background"
+                        android:paddingHorizontal="8dp"
+                        android:layout_margin="1dp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/poppins_semibold"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Games"
+                        android:background="@drawable/category_button_background"
+                        android:paddingHorizontal="8dp"
+                        android:layout_margin="1dp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/poppins_semibold"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sports"
+                        android:background="@drawable/category_button_background"
+                        android:paddingHorizontal="8dp"
+                        android:layout_margin="1dp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/poppins_semibold"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- RecyclerView for Clubs -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_clubs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/club_list" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>
