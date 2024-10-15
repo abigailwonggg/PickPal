@@ -21,7 +21,8 @@ public class ProfileFragment extends Fragment {
     private RecyclerView recyclerView;
     private PostAdapter postAdapter;
     private List<PostData> postList;
-    private Button moderatorDashboardButton; // Declare the button for Moderator Dashboard
+    private Button moderatorDashboardButton;
+    private Button editProfileButton;
 
     @Nullable
     @Override
@@ -35,6 +36,14 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 viewModDash();
+            }
+        });
+
+        editProfileButton = view.findViewById(R.id.editProfBtn);
+        editProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewEditProfile();
             }
         });
 
@@ -71,6 +80,12 @@ public class ProfileFragment extends Fragment {
     private void viewModDash() {
         // This method starts the ModeratorModule activity
         Intent intent = new Intent(getActivity(), ModeratorModule.class);
+        startActivity(intent);
+    }
+
+    private void viewEditProfile() {
+        // This method starts the ModeratorModule activity
+        Intent intent = new Intent(getActivity(), EditProfile.class);
         startActivity(intent);
     }
 }
