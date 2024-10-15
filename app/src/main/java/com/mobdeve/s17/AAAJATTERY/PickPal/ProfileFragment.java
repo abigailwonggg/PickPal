@@ -23,6 +23,7 @@ public class ProfileFragment extends Fragment {
     private List<PostData> postList;
     private Button moderatorDashboardButton;
     private Button editProfileButton;
+    private ImageButton logoutButton;
 
     @Nullable
     @Override
@@ -44,6 +45,14 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 viewEditProfile();
+            }
+        });
+
+        logoutButton = view.findViewById(R.id.logoutBtn);
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logoutFunc();
             }
         });
 
@@ -88,4 +97,11 @@ public class ProfileFragment extends Fragment {
         Intent intent = new Intent(getActivity(), EditProfile.class);
         startActivity(intent);
     }
+
+    public void logoutFunc() {
+        // Create an intent to navigate to WelcomeActivity
+        Intent intent = new Intent(getActivity(), WelcomeActivity.class);
+        startActivity(intent);
+    }
+
 }
