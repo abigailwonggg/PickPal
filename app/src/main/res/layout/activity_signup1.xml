@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Signup1Activity"
+    tools:context=".SignUp1Activity"
     android:background="@drawable/container_login">
 
     <!-- Ellipses on the bg -->
@@ -153,7 +153,6 @@
             android:id="@+id/label_firstName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:gravity="start"
             android:includeFontPadding="false"
             android:maxLines="1"

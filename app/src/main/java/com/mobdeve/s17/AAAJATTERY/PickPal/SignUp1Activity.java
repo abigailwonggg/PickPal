@@ -15,7 +15,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class Signup1Activity extends AppCompatActivity {
+public class SignUp1Activity extends AppCompatActivity {
 
     EditText username;
     EditText firstName;
@@ -60,9 +60,9 @@ public class Signup1Activity extends AppCompatActivity {
                 String emailInput = email.getText().toString();
 
                 if (usernameInput.isEmpty() || fNameInput.isEmpty() || lNameInput.isEmpty() || emailInput.isEmpty())  {
-                    Toast.makeText(Signup1Activity.this, "All fields are required. Please complete them.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUp1Activity.this, "All fields are required. Please complete them.", Toast.LENGTH_SHORT).show();
                 } else {
-                    Intent i = new Intent(Signup1Activity.this, SignUp2Activity.class); //Change to Signup2Activity
+                    Intent i = new Intent(SignUp1Activity.this, SignUp2Activity.class); //Change to Signup2Activity
                     i.putExtra("username", usernameInput);
                     i.putExtra("firstName", fNameInput);
                     i.putExtra("lastName", lNameInput);
@@ -76,7 +76,7 @@ public class Signup1Activity extends AppCompatActivity {
         login_link.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Signup1Activity.this, LoginActivity.class);
+                Intent i = new Intent(SignUp1Activity.this, LoginActivity.class);
                 startActivity(i);
                 finish();
             }
