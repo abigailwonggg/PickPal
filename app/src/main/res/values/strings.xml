@@ -13,11 +13,19 @@
     <string name="search">Search...</string>
     <string name="moderator_dashboard_btn">Moderator Dashboard</string>
     <string name="username_tag">\@woofPawple</string>
+
     <string-array name="club_choices">
         <item>Select Club</item>
         <item>Club A</item>
         <item>Club B</item>
         <item>Club C</item>
+    </string-array>
+
+    <string-array name="gender_array">
+        <item>-Select your gender-</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Rather Not Say</item>
     </string-array>
 
 </resources>

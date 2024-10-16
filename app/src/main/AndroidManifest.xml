@@ -18,7 +18,12 @@
         <activity
             android:name=".Signup1Activity"
             android:exported="false" />
+        <activity
+            android:name=".SignUp2Activity"
+            android:exported="false" />
+
         <activity android:name=".ModeratorModule" />
+
         <activity
             android:name=".WelcomeActivity"
             android:exported="true">

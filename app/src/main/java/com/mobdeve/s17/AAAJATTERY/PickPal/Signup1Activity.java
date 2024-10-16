@@ -62,7 +62,7 @@ public class Signup1Activity extends AppCompatActivity {
                 if (usernameInput.isEmpty() || fNameInput.isEmpty() || lNameInput.isEmpty() || emailInput.isEmpty())  {
                     Toast.makeText(Signup1Activity.this, "All fields are required. Please complete them.", Toast.LENGTH_SHORT).show();
                 } else {
-                    Intent i = new Intent(Signup1Activity.this, MainActivity.class); //Change to Signup2Activity
+                    Intent i = new Intent(Signup1Activity.this, SignUp2Activity.class); //Change to Signup2Activity
                     i.putExtra("username", usernameInput);
                     i.putExtra("firstName", fNameInput);
                     i.putExtra("lastName", lNameInput);
