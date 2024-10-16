@@ -233,7 +233,11 @@
         android:text="Forgot password?"
         android:fontFamily="@font/poppins_regular"
         android:textColor="#FFFFFFFF"
-        android:textSize="13dp" />
+        android:textSize="13dp"
+        android:shadowColor="#000000"
+        android:shadowRadius="10"
+        android:shadowDx="0"
+        android:shadowDy="4"/>
 
     <!-- Login Button -->
     <Button
@@ -267,7 +271,11 @@
         android:text="Don’t have an account? "
         android:fontFamily="@font/poppins_regular"
         android:textColor="#FFFFFFFF"
-        android:textSize="13dp" />
+        android:textSize="13dp"
+        android:shadowColor="#000000"
+        android:shadowRadius="10"
+        android:shadowDx="0"
+        android:shadowDy="4"/>
 
     <TextView
         android:id="@+id/signup_link"
@@ -283,7 +291,11 @@
         android:text="Sign Up!"
         android:fontFamily="@font/poppins_bold"
         android:textColor="#FFFFFFFF"
-        android:textSize="13dp" />
+        android:textSize="13dp"
+        android:shadowColor="#000000"
+        android:shadowRadius="10"
+        android:shadowDx="0"
+        android:shadowDy="4"/>
 
 
 </FrameLayout>

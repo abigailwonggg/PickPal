@@ -38,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
 
         Button btn_login = findViewById(R.id.btn_login);
         TextView signup_link = findViewById(R.id.signup_link);
+        TextView txt_forgot_password = findViewById(R.id.txt_forgot_password);
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +69,14 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
+        txt_forgot_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, ForgotPassword1.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         eyeIcon.setOnClickListener(new View.OnClickListener() {
             boolean isPasswordVisible = false;
 

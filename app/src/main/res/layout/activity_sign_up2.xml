@@ -78,7 +78,11 @@
         android:text="Sign Up!"
         android:fontFamily="@font/poppins_bold"
         android:textColor="#FFFFFFFF"
-        android:textSize="35dp" />
+        android:textSize="35dp"
+        android:shadowColor="#000000"
+        android:shadowRadius="10"
+        android:shadowDx="8"
+        android:shadowDy="3"/>
 
     <TextView
         android:id="@+id/signup_subheader"
@@ -94,7 +98,11 @@
         android:text="Hey Pal! Let's get started"
         android:fontFamily="@font/poppins_regular"
         android:textColor="#FFFFFFFF"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:shadowColor="#000000"
+        android:shadowRadius="10"
+        android:shadowDx="0"
+        android:shadowDy="4"/>
 
     <!-- Input Fields -->
     <LinearLayout

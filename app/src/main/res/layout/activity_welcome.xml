@@ -34,10 +34,10 @@
         android:text="Ready to"
         android:fontFamily="@font/poppins_bold"
         android:textColor="#FFFFFFFF"
-        android:shadowColor="#313145"
-        android:shadowDx="3"
-        android:shadowDy="8"
+        android:shadowColor="#000000"
         android:shadowRadius="10"
+        android:shadowDx="8"
+        android:shadowDy="3"
         android:textSize="45dp" />
 
     <TextView
@@ -55,10 +55,10 @@
         android:text="make choices"
         android:fontFamily="@font/poppins_bold"
         android:textColor="#FFFFFFFF"
-        android:shadowColor="#313145"
-        android:shadowDx="3"
-        android:shadowDy="8"
+        android:shadowColor="#000000"
         android:shadowRadius="10"
+        android:shadowDx="8"
+        android:shadowDy="3"
         android:textSize="45dp" />
 
     <TextView
@@ -76,10 +76,10 @@
         android:text="with your pals?"
         android:fontFamily="@font/poppins_bold"
         android:textColor="#FFFFFFFF"
-        android:shadowColor="#313145"
-        android:shadowDx="3"
-        android:shadowDy="8"
+        android:shadowColor="#000000"
         android:shadowRadius="10"
+        android:shadowDx="8"
+        android:shadowDy="3"
         android:textSize="45dp" />
 
     <!--Orange Polygon-->
@@ -111,7 +111,8 @@
         android:fontFamily="@font/poppins_bold"
         android:textColor="#FFEF7035"
         android:textSize="25dp"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        />
 
 
     <!-- Sign Up button -->
