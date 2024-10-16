@@ -180,18 +180,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_gravity="top|left"
-                    android:gravity="start|center_vertical"
-                    android:includeFontPadding="false"
-                    android:maxLines="1"
-                    android:singleLine="true"
-                    android:hint="Password"
-                    android:inputType="textPassword"
-                    android:fontFamily="@font/poppins_regular"
-                    android:textColor="#FF000000"
-                    android:textSize="17dp" />
+                    android:layout_marginRight="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="top|left"
+                android:gravity="start|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="#FF000000"
+                android:textSize="17dp" />
+
+                <!-- Eye Icon for Password Visibility Toggle -->
+                <ImageView
+                    android:id="@+id/img_eye_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="26dp"
+                    android:layout_marginRight="10dp"
+                android:layout_gravity="end|center_vertical"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_eye_close" />
+
             </FrameLayout>
         </FrameLayout>
 
@@ -205,6 +216,7 @@
             android:scaleType="centerInside"
             android:src="@drawable/lock_icon" />
     </FrameLayout>
+
 
     <!-- Forgot Password Text -->
     <TextView

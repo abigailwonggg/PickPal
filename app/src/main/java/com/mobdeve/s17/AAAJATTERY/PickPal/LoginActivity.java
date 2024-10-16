@@ -2,6 +2,7 @@ package com.mobdeve.s17.AAAJATTERY.PickPal;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,6 +17,7 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText username;
     EditText password;
+    ImageView eyeIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
         ImageView backButton = findViewById(R.id.back_button);
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
+        eyeIcon = findViewById(R.id.img_eye_icon);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +65,26 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(LoginActivity.this, Signup1Activity.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+
+        eyeIcon.setOnClickListener(new View.OnClickListener() {
+            boolean isPasswordVisible = false;
+
+            @Override
+            public void onClick(View v) {
+                if (isPasswordVisible) {
+                    // Set password to hidden
+                    password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    eyeIcon.setImageResource(R.drawable.ic_eye_close);
+                } else {
+                    // Set password to visible
+                    password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                    eyeIcon.setImageResource(R.drawable.ic_eye_open);
+                }
+                password.setSelection(password.getText().length());
+                isPasswordVisible = !isPasswordVisible;
             }
         });
     }
