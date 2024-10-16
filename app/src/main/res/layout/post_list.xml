@@ -82,7 +82,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/mod_dismiss_button"
-                android:text="Edit"
+                android:backgroundTint="@color/red"
+                android:text="Delete"
                 android:textSize="14sp"
                 android:fontFamily="@font/poppins_semibold"
                 android:textColor="@color/white"/>
