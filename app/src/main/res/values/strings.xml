@@ -13,4 +13,11 @@
     <string name="search">Search...</string>
     <string name="moderator_dashboard_btn">Moderator Dashboard</string>
     <string name="username_tag">\@woofPawple</string>
+    <string-array name="club_choices">
+        <item>Select Club</item>
+        <item>Club A</item>
+        <item>Club B</item>
+        <item>Club C</item>
+    </string-array>
+
 </resources>

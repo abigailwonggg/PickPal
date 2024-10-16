@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/create_done_bg"
+    tools:context=".CreateSuccess">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleTextColor="@android:color/white"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/user_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="10dp"
+            android:layout_gravity="end"
+            android:src="@drawable/user_pic"
+            android:contentDescription="@string/user_icon"
+            app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/username"
+            android:layout_gravity="end"
+            android:layout_marginEnd="20dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins_semibold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/success_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Poll successfully posted!"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:layout_marginTop="250dp"
+        android:layout_marginStart="75dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="45dp"
+        android:textColor="@color/purple"
+        android:lineHeight="58dp"/>
+
+    <Button
+        android:id="@+id/view_post_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/success_msg"
+        app:layout_constraintStart_toStartOf="@id/success_msg"
+        android:text="View my Post"
+        android:fontFamily="@font/poppins_semibold"
+        android:textSize="25dp"
+        android:textAllCaps="false"
+        android:background="@drawable/green_btn"
+        android:textColor="@color/white"
+        android:paddingStart="17dp"
+        android:paddingEnd="17dp"
+        android:onClick="viewProfile"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

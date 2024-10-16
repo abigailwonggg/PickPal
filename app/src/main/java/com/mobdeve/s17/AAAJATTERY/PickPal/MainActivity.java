@@ -1,16 +1,11 @@
 package com.mobdeve.s17.AAAJATTERY.PickPal;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -40,6 +35,18 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottom_nav);
         frameLayout = findViewById(R.id.nav_host_fragment);
 
+        // Handle Intent to navigate to ProfileFragment
+        Intent intent = getIntent();
+        if (intent != null && intent.hasExtra("navigateTo")) {
+            String navigateTo = intent.getStringExtra("navigateTo");
+            if ("Profile".equals(navigateTo)) {
+                loadFragment(new ProfileFragment(), false); // Load ProfileFragment
+            }
+        } else {
+            // Load the home fragment initially
+            loadFragment(new HomeFragment(), true);
+        }
+
         // Set up bottom navigation listener
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
             @Override
@@ -60,9 +67,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-
-        // Load the home fragment initially
-        loadFragment(new HomeFragment(), true);
     }
 
     // Method to load fragment into the frame layout
@@ -77,3 +81,4 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 }
+

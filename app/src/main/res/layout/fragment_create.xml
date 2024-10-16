@@ -1,17 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".CreateFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:text="Create Page" />
+    <!-- Header and Input Prompt Section -->
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tv_create_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create a Post"
+        android:textSize="20sp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/black"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="36dp"
+        android:layout_marginTop="20dp"/>
+
+    <!-- Input prompt with icon -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/rounded_corner_bg"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp">
+
+        <!-- Icon beside the prompt -->
+        <ImageView
+            android:id="@+id/icon_prompt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/prompt_icon"
+            android:contentDescription="Prompt Icon"
+            android:layout_marginEnd="8dp" />
+
+        <!-- Prompt input field -->
+        <EditText
+            android:id="@+id/et_prompt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Enter your prompt"
+            android:fontFamily="@font/poppins_regular"
+            android:background="@null"
+            android:padding="12dp"/>
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spinner_club"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_corner_bg"
+        android:fontFamily="@font/poppins_regular"
+        android:padding="12dp"
+        android:hint="Select a Club" />
+
+    <!-- Options Section -->
+    <LinearLayout
+        android:id="@+id/option_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="16dp">
+
+        <!-- Option 1 -->
+        <LinearLayout
+            android:id="@+id/option1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/rounded_corner_bg"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp">
+
+            <EditText
+                android:id="@+id/option_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_weight="1"
+                android:hint="Option 1"
+                android:background="@null"/>
+
+            <!-- Add image icon for Option 1 -->
+            <ImageButton
+                android:id="@+id/add_image_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/add_img_btn"
+                android:background="@null"
+                android:contentDescription="Add Image"/>
+        </LinearLayout>
+
+        <!-- Option 2 -->
+        <LinearLayout
+            android:id="@+id/option2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/rounded_corner_bg"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp">
+
+            <EditText
+                android:id="@+id/option_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_weight="1"
+                android:hint="Option 2"
+                android:background="@null"/>
+
+            <!-- Add image icon for Option 2 -->
+            <ImageButton
+                android:id="@+id/add_image_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/add_img_btn"
+                android:background="@null"
+                android:contentDescription="Add Image"/>
+        </LinearLayout>
+
+        <!-- Option 3 (hidden initially) -->
+        <LinearLayout
+            android:id="@+id/option3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/rounded_corner_bg"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/option_3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Option 3"
+                android:background="@null"/>
+
+            <ImageButton
+                android:id="@+id/add_image_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/add_img_btn"
+                android:background="@null"
+                android:contentDescription="Add Image"/>
+
+            <!-- Remove option button -->
+            <ImageButton
+                android:id="@+id/remove_option_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/remove_option_btn"
+                android:background="@null"
+                android:contentDescription="Remove Option"/>
+        </LinearLayout>
+
+        <!-- Option 4 (hidden initially) -->
+        <LinearLayout
+            android:id="@+id/option4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/rounded_corner_bg"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/option_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Option 4"
+                android:background="@null"/>
+
+            <ImageButton
+                android:id="@+id/add_image_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/add_img_btn"
+                android:background="@null"
+                android:contentDescription="Add Image"/>
+
+            <!-- Remove option button -->
+            <ImageButton
+                android:id="@+id/remove_option_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/remove_option_btn"
+                android:background="@null"
+                android:contentDescription="Remove Option"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Button to add an option -->
+    <Button
+        android:id="@+id/btn_add_option"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add an option +"
+        android:background="@drawable/dismiss_button"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:minHeight="35dp"
+        android:textColor="@color/white"
+        android:layout_gravity="center_horizontal"/>
+
+    <!-- Post Poll Button -->
+    <Button
+        android:id="@+id/btn_post_poll"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Post Poll"
+        android:background="@drawable/mod_dashb_btn_bg"
+        android:textColor="@color/white"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/poppins_semibold"
+        android:layout_marginTop="56dp"/>
+
+</LinearLayout>
