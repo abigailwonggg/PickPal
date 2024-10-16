@@ -58,7 +58,7 @@ public class SignUp2Activity extends AppCompatActivity {
             if (birthdayInput.isEmpty() || genderInput.isEmpty()) {
                 Toast.makeText(SignUp2Activity.this, "Please complete all fields.", Toast.LENGTH_SHORT).show();
             } else {
-                Intent i = new Intent(SignUp2Activity.this, SignUp3Activity.class); // Change to the actual next activity
+                Intent i = new Intent(SignUp2Activity.this, SignUp3Activity.class);
                 i.putExtra("birthday", birthdayInput);
                 i.putExtra("gender", genderInput);
 

@@ -1,5 +1,6 @@
 package com.mobdeve.s17.AAAJATTERY.PickPal;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
@@ -74,7 +75,17 @@ public class SignUp3Activity extends AppCompatActivity {
             } else if (!checkboxAgreement.isChecked()) {
                 Toast.makeText(SignUp3Activity.this, "Please agree to the terms", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(SignUp3Activity.this, "Sign up successful!", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(SignUp3Activity.this, AccountCreated.class);
+                i.putExtra("password", pass);
+                i.putExtra("birthday", getIntent().getStringExtra("birthday"));
+                i.putExtra("gender", getIntent().getStringExtra("gender"));
+                i.putExtra("username", getIntent().getStringExtra("username"));
+                i.putExtra("firstName", getIntent().getStringExtra("firstName"));
+                i.putExtra("lastName", getIntent().getStringExtra("lastName"));
+                i.putExtra("email", getIntent().getStringExtra("email"));
+
+                startActivity(i);
+                finish();
             }
         });
 
