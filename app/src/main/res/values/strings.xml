@@ -16,9 +16,12 @@
 
     <string-array name="club_choices">
         <item>Select Club</item>
-        <item>Club A</item>
-        <item>Club B</item>
-        <item>Club C</item>
+        <item>Feed</item>
+        <item>Anime</item>
+        <item>Music</item>
+        <item>Horror Movies</item>
+        <item>Manila Cafes</item>
+        <item>Justin Bieber Fans Club</item>
     </string-array>
 
     <string-array name="gender_array">

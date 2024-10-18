@@ -1,5 +1,6 @@
 package com.mobdeve.s17.AAAJATTERY.PickPal;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,7 +30,6 @@ public class EditProfile extends AppCompatActivity {
         privateAccountSwitch = findViewById(R.id.switch_private_account);
         saveButton = findViewById(R.id.save_button);
 
-        // Set up listeners to save changes
         saveButton.setOnClickListener(v -> {
             saveProfileChanges();
         });
@@ -41,8 +41,14 @@ public class EditProfile extends AppCompatActivity {
         String username = usernameEditText.getText().toString();
         boolean isPrivate = privateAccountSwitch.isChecked();
 
-        // Save the data (you could save to database or shared preferences)
-        // Example: Use SharedPreferences or communicate with a backend to save profile data
+        Intent resultIntent = new Intent();
+        //Logic here...............
+        /*resultIntent.putExtra("firstName", firstName);
+        resultIntent.putExtra("lastName", lastName);
+        resultIntent.putExtra("username", username);
+        resultIntent.putExtra("isPrivate", isPrivate);*/
+        setResult(RESULT_OK, resultIntent);
+        finish();
     }
 
     public void bckBtn(View v){
