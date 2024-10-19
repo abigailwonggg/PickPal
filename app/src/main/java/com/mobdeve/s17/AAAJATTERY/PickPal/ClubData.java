@@ -5,14 +5,18 @@ public class ClubData {
     private String description;
     private int imageResourceId;
     private int numberOfMembers;
+    private boolean isJoined; // New field to track joined state
 
-    public ClubData(String name, String description, int imageResourceId, int numberOfMembers) {
+    // Constructor
+    public ClubData(String name, String description, int imageResourceId, int numberOfMembers, boolean isJoined) {
         this.name = name;
         this.description = description;
         this.imageResourceId = imageResourceId;
         this.numberOfMembers = numberOfMembers;
+        this.isJoined = isJoined; // Initialize the joined state
     }
 
+    // Getters and setters
     public String getName() {
         return name;
     }
@@ -28,5 +32,12 @@ public class ClubData {
     public int getNumberOfMembers() {
         return numberOfMembers;
     }
-}
 
+    public boolean isJoined() {
+        return isJoined;
+    }
+
+    public void setJoined(boolean joined) {
+        isJoined = joined;
+    }
+}

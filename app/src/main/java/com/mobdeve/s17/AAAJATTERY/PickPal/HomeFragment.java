@@ -62,7 +62,7 @@ public class HomeFragment extends Fragment {
         // 4-option word + image poll for "Manila Cafes"
         pollList.add(new PollData("dave", "Choose a vacation destination:", 400,
                 Arrays.asList("Beach", "Mountain", "City", "Countryside"),
-                Arrays.asList("default_image", "default_image", "default_image", "default_image"), "Manila Cafes"));
+                Arrays.asList("default_image", "default_image", "default_image", "default_image"), "Feed"));
 
         // Filter the poll list based on the current club, with null check for poll.getClub()
         List<PollData> filteredPollList = pollList.stream()

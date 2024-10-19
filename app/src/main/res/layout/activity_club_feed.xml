@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lilac"
+    tools:context=".ClubFeed">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lilac"
+        app:titleTextColor="@android:color/white"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/back_button"
+            android:onClick="bckBtn"
+            android:contentDescription="@string/back_button" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/club_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:layout_margin="25dp">
+
+        <TextView
+            android:id="@+id/club_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Club Name"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="50sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/club_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="The club description goes here. This is placeholder text."
+            android:textSize="16dp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/gray"/>
+
+        <Button
+            android:id="@+id/post_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/mod_dashb_btn_bg"
+            android:text="Create a Post"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_marginEnd="35dp"/>
+
+    </LinearLayout>
+
+    <!-- RecyclerView for poll posts, constrained to fill remaining space -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_polls"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_margin="25dp"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@id/club_head"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- This FrameLayout is where the CreateFragment will be loaded -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/club_head"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

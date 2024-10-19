@@ -74,17 +74,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="2dp">
+            android:layout_marginTop="2dp"
+            android:padding="5dp">
 
             <TextView
                 android:id="@+id/club_description"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_width="275dp"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/poppins_regular"
                 android:text="Club description goes here..."
-                android:textSize="15sp"
                 android:textColor="#606060"
-                android:fontFamily="@font/poppins_regular"/>
+                android:textSize="14sp" />
 
             <Button
                 android:id="@+id/view_button"
@@ -94,7 +94,7 @@
                 android:background="@drawable/club_view_button"
                 android:textColor="@android:color/white"
                 android:fontFamily="@font/poppins_semibold"
-                android:padding="8dp"/>
+                android:layout_gravity="right"/>
 
         </LinearLayout>
 

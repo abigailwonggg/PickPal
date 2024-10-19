@@ -28,16 +28,15 @@ public class ClubsFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recycler_view_clubs);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        // Create dummy data
         clubList = new ArrayList<>();
-        clubList.add(new ClubData("Anime", "A club for anime enthusiasts.", R.drawable.default_image, 30));
-        clubList.add(new ClubData("Music", "Share your favorite music and artists.", R.drawable.default_image, 45));
-        clubList.add(new ClubData("Horror Movies", "Discuss and watch horror movies together.", R.drawable.default_image, 2000));
-        clubList.add(new ClubData("Manila Cafes", "Explore different coffee shops in Manila.", R.drawable.default_image, 152));
-        clubList.add(new ClubData("Justin Bieber Fans Club", "Stay updated with the latest Justin Bieber updates.", R.drawable.default_image, 250));
+        clubList.add(new ClubData("Anime", "A club for anime enthusiasts.", R.drawable.default_image, 30, false));
+        clubList.add(new ClubData("Music", "Share your favorite music and artists.", R.drawable.default_image, 45, false));
+        clubList.add(new ClubData("Horror Movies", "Discuss and watch horror movies together.", R.drawable.default_image, 2000, false));
+        clubList.add(new ClubData("Manila Cafes", "Explore different coffee shops in Manila.", R.drawable.default_image, 152, false));
+        clubList.add(new ClubData("Justin Bieber Fans Club", "Stay updated with the latest Justin Bieber updates.", R.drawable.default_image, 250, false));
 
         // Set up the adapter
-        clubsAdapter = new ClubsAdapter(clubList);
+        clubsAdapter = new ClubsAdapter(getActivity(), clubList);  // Pass context and clubList
         recyclerView.setAdapter(clubsAdapter);
 
         return view;
