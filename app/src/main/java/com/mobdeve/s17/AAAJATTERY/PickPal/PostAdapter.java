@@ -15,11 +15,11 @@ import java.util.List;
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
 
     private List<PostData> postList;
-    private FragmentManager fragmentManager;  // To manage fragment transactions
+    private FragmentManager fragmentManager;
 
     public PostAdapter(List<PostData> postList, FragmentManager fragmentManager) {
         this.postList = postList;
-        this.fragmentManager = fragmentManager;  // Pass FragmentManager in constructor
+        this.fragmentManager = fragmentManager;
     }
 
     @NonNull
@@ -56,7 +56,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
         // Delete button click event (if required later)
         holder.delButton.setOnClickListener(v -> {
-            // Handle the delete functionality (if needed)
         });
     }
 

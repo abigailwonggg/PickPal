@@ -2,7 +2,7 @@ package com.mobdeve.s17.AAAJATTERY.PickPal;
 
 public class PostData {
     private String username;
-    private int userPic; // Drawable resource for user's profile picture
+    private int userPic;
     private String text;
 
     public PostData(String username, int userPic, String text) {
