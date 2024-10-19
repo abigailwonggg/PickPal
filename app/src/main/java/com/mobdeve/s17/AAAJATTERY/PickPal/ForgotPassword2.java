@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +18,7 @@ public class ForgotPassword2 extends AppCompatActivity {
 
     private EditText otpInput1, otpInput2, otpInput3, otpInput4, otpInput5, otpInput6;
     private Button btnVerify;
+    private ImageButton backButton; // Fixed variable declaration
 
     // Example predefined OTP for verification (for demonstration purposes)
     private final String predefinedOTP = "123456"; // Replace with your logic for verification
@@ -40,6 +42,7 @@ public class ForgotPassword2 extends AppCompatActivity {
         otpInput4 = findViewById(R.id.otp_input4);
         otpInput5 = findViewById(R.id.otp_input5);
         otpInput6 = findViewById(R.id.otp_input6);
+        backButton = findViewById(R.id.btn_back);
 
         // Initialize the verify button
         btnVerify = findViewById(R.id.btn_verify);
@@ -65,6 +68,14 @@ public class ForgotPassword2 extends AppCompatActivity {
                     // Show error message if the OTP is incorrect
                     Toast.makeText(ForgotPassword2.this, "Invalid OTP. Please try again.", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        // need to fix this it terminates the app
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed(); // Go back to the previous activity
             }
         });
     }

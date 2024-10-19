@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.EditText;
@@ -18,13 +19,14 @@ public class LoginActivity extends AppCompatActivity {
     EditText username;
     EditText password;
     ImageView eyeIcon;
+    ImageButton backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        ImageView backButton = findViewById(R.id.back_button);
+        ImageView backButton = findViewById(R.id.btn_back);
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         eyeIcon = findViewById(R.id.img_eye_icon);
@@ -95,5 +97,8 @@ public class LoginActivity extends AppCompatActivity {
                 isPasswordVisible = !isPasswordVisible;
             }
         });
+
+        // need to fix this it terminates the app
+        backButton.setOnClickListener(v -> finish()); // Finish the activity to go back
     }
 }

@@ -6,9 +6,9 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,7 +21,7 @@ public class SignUp2Activity extends AppCompatActivity {
     private EditText birthdayEditText;
     private Spinner genderSpinner;
     private Button btnNext;
-    private ImageView backButton;
+    private ImageButton backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class SignUp2Activity extends AppCompatActivity {
         genderSpinner = findViewById(R.id.spinner_gender);
         birthdayEditText = findViewById(R.id.birthday);
         btnNext = findViewById(R.id.btn_next);
-        backButton = findViewById(R.id.back_button);
+        backButton = findViewById(R.id.btn_back);
 
         // Set up gender spinner with an adapter
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -46,10 +46,8 @@ public class SignUp2Activity extends AppCompatActivity {
         // Set up date picker for the birthday field
         birthdayEditText.setOnClickListener(v -> showDatePickerDialog());
 
-        // Set up the back button logic
-        backButton.setOnClickListener(v -> {
-            finish();
-        });
+        // need to fix this it terminates the app
+        backButton.setOnClickListener(v -> finish());
 
         btnNext.setOnClickListener(v -> {
             String birthdayInput = birthdayEditText.getText().toString();

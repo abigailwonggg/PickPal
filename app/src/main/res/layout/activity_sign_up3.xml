@@ -51,16 +51,17 @@
         android:scaleType="centerInside"
         android:src="@drawable/pickpal_logo" />
 
-    <!--back button-->
-    <ImageView
-        android:id="@+id/back_button"
-        android:layout_width="34.13dp"
-        android:layout_height="33.45dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="18dp"
-        android:layout_gravity="top|left"
-        android:scaleType="centerInside"
-        android:src="@drawable/img_back_button" />
+    <!-- Back Button -->
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/back_button"
+        android:onClick="bckBtn"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/back_button" />
 
     <!-- Sign Up Text -->
     <TextView

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -24,6 +25,7 @@ public class SignUp3Activity extends AppCompatActivity {
     CheckBox checkboxAgreement;
     boolean isPasswordVisible = false;
     boolean isConfirmPasswordVisible = false;
+    ImageButton backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,7 @@ public class SignUp3Activity extends AppCompatActivity {
         imgEyeConfirmPassword = findViewById(R.id.cp_eye_icon);
         btnSignUp = findViewById(R.id.btn_signup);
         checkboxAgreement = findViewById(R.id.checkbox_agreement);
+        backButton = findViewById(R.id.btn_back); // Initialize backButton
 
         // Toggle password visibility for Password
         imgEyePassword.setOnClickListener(v -> {
@@ -51,20 +54,20 @@ public class SignUp3Activity extends AppCompatActivity {
             password.setSelection(password.getText().length());
         });
 
-
+        // Toggle password visibility for Confirm Password
         imgEyeConfirmPassword.setOnClickListener(v -> {
             if (isConfirmPasswordVisible) {
                 confirmPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                imgEyeConfirmPassword.setImageResource(R.drawable.ic_eye_close); // Update icon
+                imgEyeConfirmPassword.setImageResource(R.drawable.ic_eye_close);
             } else {
                 confirmPassword.setInputType(InputType.TYPE_CLASS_TEXT);
-                imgEyeConfirmPassword.setImageResource(R.drawable.ic_eye_open); // Update icon
+                imgEyeConfirmPassword.setImageResource(R.drawable.ic_eye_open);
             }
             isConfirmPasswordVisible = !isConfirmPasswordVisible;
-            confirmPassword.setSelection(confirmPassword.getText().length()); // Move cursor to end
+            confirmPassword.setSelection(confirmPassword.getText().length());
         });
 
-        // Sign Up
+        // Sign Up button click listener
         btnSignUp.setOnClickListener(v -> {
             String pass = password.getText().toString();
             String confirmPass = confirmPassword.getText().toString();
@@ -85,11 +88,18 @@ public class SignUp3Activity extends AppCompatActivity {
                 i.putExtra("email", getIntent().getStringExtra("email"));
 
                 startActivity(i);
-                finish();
+                finish(); // Close the current activity
             }
         });
 
-            ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        // need to fix this it terminates the app
+        backButton.setOnClickListener(v -> {
+            Toast.makeText(SignUp3Activity.this, "Back Button Clicked", Toast.LENGTH_SHORT).show();
+            finish();
+        });
+
+        // Handle window insets for padding
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;

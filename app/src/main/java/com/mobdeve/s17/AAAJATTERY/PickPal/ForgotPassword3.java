@@ -6,6 +6,7 @@ import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton; // Import ImageButton
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -20,6 +21,7 @@ public class ForgotPassword3 extends AppCompatActivity {
     EditText password, confirmPassword;
     ImageView imgEyePassword, imgEyeConfirmPassword;
     Button btnUpdatePassword;
+    ImageButton backButton; // Declare backButton
     boolean isPasswordVisible = false;
     boolean isConfirmPasswordVisible = false;
 
@@ -35,6 +37,7 @@ public class ForgotPassword3 extends AppCompatActivity {
         imgEyePassword = findViewById(R.id.img_eye_icon);
         imgEyeConfirmPassword = findViewById(R.id.cp_eye_icon);
         btnUpdatePassword = findViewById(R.id.btn_update_password);
+        backButton = findViewById(R.id.btn_back); // Initialize backButton
 
         // Set up password visibility toggle for the password field
         imgEyePassword.setOnClickListener(v -> {
@@ -75,13 +78,15 @@ public class ForgotPassword3 extends AppCompatActivity {
                 // For example: send the new password to the server or save it locally
                 Toast.makeText(ForgotPassword3.this, "Password updated successfully", Toast.LENGTH_SHORT).show();
 
-
                 Intent intent = new Intent(ForgotPassword3.this, PasswordReset.class);
                 intent.putExtra("password", pass);
                 startActivity(intent);
                 finish(); // Close the current activity
             }
         });
+
+        // need to fix this it terminates the app
+        backButton.setOnClickListener(v -> onBackPressed()); // Go back to the previous activity
 
         // Adjust padding for the main layout to avoid content overlap with system UI
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
