@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,7 +16,6 @@ import com.bumptech.glide.Glide;
 import com.google.android.material.imageview.ShapeableImageView;
 
 import java.util.List;
-
 
 public class PollAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -69,6 +69,19 @@ public class PollAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         } else {
             ((PollTextViewHolder) holder).bind(poll);
         }
+
+        // Set up button click listener to navigate to ViewPostFragment
+        holder.itemView.findViewById(R.id.btn_vote).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "Navigating to ViewPostFragment", Toast.LENGTH_SHORT).show();
+                // Navigate to ViewPostFragment
+                ((MainActivity) context).getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.root, new ViewPostFragment()) // Adjust R.id.fragment_container to your actual container ID
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
     }
 
     @Override

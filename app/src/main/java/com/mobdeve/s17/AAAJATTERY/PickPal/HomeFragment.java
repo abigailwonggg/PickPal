@@ -75,5 +75,7 @@ public class HomeFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         return rootView;  // Return the inflated view
+
+
     }
 }
