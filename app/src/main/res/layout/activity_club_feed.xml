@@ -15,7 +15,8 @@
         android:layout_height="wrap_content"
         android:background="@color/lilac"
         app:titleTextColor="@android:color/white"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:ignore="MissingConstraints">
 
         <ImageButton
             android:id="@+id/back_button"
