@@ -18,7 +18,7 @@
             android:name=".ViewPostFragment"
             android:exported="false" />
         <activity
-            android:name=".ClubFeed"
+            android:name=".ModeratorModuleViewMore"
             android:exported="false" />
         <activity
             android:name=".PasswordReset"

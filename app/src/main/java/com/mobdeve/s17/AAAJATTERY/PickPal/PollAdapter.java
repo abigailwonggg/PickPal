@@ -82,6 +82,18 @@ public class PollAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                         .commit();
             }
         });
+
+        // Set up click listener for comment_icon to navigate to ViewPostFragment
+        holder.itemView.findViewById(R.id.comment_icon).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "Navigating to ViewPostFragment", Toast.LENGTH_SHORT).show();
+                ((MainActivity) context).getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.root, new ViewPostFragment()) // Adjust R.id.fragment_container to your actual container ID
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
     }
 
     @Override

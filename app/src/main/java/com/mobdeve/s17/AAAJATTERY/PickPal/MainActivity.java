@@ -48,24 +48,20 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Set up bottom navigation listener
-        bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int itemID = item.getItemId();
-
-                if (itemID == R.id.nav_home) {
-                    loadFragment(new HomeFragment(), false);
-                } else if (itemID == R.id.nav_clubs) {
-                    loadFragment(new ClubsFragment(), false);
-                } else if (itemID == R.id.nav_create) {
-                    loadFragment(new CreateFragment(), false);
-                } else if (itemID == R.id.nav_alerts) {
-                    loadFragment(new AlertsFragment(), false);
-                } else if (itemID == R.id.nav_profile) {
-                    loadFragment(new ProfileFragment(), false);
-                }
-                return true;
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            int itemID = item.getItemId();
+            if (itemID == R.id.nav_home) {
+                loadFragment(new HomeFragment(), false);
+            } else if (itemID == R.id.nav_clubs) {
+                loadFragment(new ClubsFragment(), false);
+            } else if (itemID == R.id.nav_create) {
+                loadFragment(new CreateFragment(), false);
+            } else if (itemID == R.id.nav_alerts) {
+                loadFragment(new AlertsFragment(), false);
+            } else if (itemID == R.id.nav_profile) {
+                loadFragment(new ProfileFragment(), false);
             }
+            return true;
         });
     }
 

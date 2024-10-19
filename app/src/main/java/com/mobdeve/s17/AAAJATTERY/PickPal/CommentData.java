@@ -1,15 +1,16 @@
 package com.mobdeve.s17.AAAJATTERY.PickPal;
 
 public class CommentData {
-
     private String username;
     private String commentText;
-    private String timePosted;
+    private String timestamp;
+    private int userpic; // User picture resource ID
 
-    public CommentData(String username, String commentText, String timePosted) {
+    public CommentData(String username, String commentText, String timestamp, int userpic) {
         this.username = username;
         this.commentText = commentText;
-        this.timePosted = timePosted;
+        this.timestamp = timestamp;
+        this.userpic = userpic;
     }
 
     public String getUsername() {
@@ -20,7 +21,11 @@ public class CommentData {
         return commentText;
     }
 
-    public String getTimePosted() {
-        return timePosted;
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public int getUserpic() {
+        return userpic; // Return the user picture resource ID
     }
 }

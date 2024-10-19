@@ -1,16 +1,14 @@
 package com.mobdeve.s17.AAAJATTERY.PickPal;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,38 +18,34 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ClubFeed extends AppCompatActivity {
+public class ClubFeedFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private PollAdapter pollAdapter;
-    private List<PollData> pollList;  // Full poll list
-    private String clubName, clubDescription;  // Club name and description to show
+    private List<PollData> pollList;
+    private String clubName, clubDescription;
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_club_feed);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        // Inflate the fragment layout
+        View view = inflater.inflate(R.layout.fragment_club_feed, container, false);
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            v.setPadding(insets.getSystemWindowInsetLeft(), insets.getSystemWindowInsetTop(),
-                    insets.getSystemWindowInsetRight(), insets.getSystemWindowInsetBottom());
-            return insets;
-        });
-
-        // Get the club name and description from the Intent
-        Intent intent = getIntent();
-        clubName = intent.getStringExtra("clubName");
-        clubDescription = intent.getStringExtra("clubDescription");
+        // Get the club name and description from the arguments
+        if (getArguments() != null) {
+            clubName = getArguments().getString("clubName");
+            clubDescription = getArguments().getString("clubDescription");
+        }
 
         // Set the club title and description in the UI
-        TextView clubTitleView = findViewById(R.id.club_title);
-        TextView clubDescriptionView = findViewById(R.id.club_description);
+        TextView clubTitleView = view.findViewById(R.id.club_title);
+        TextView clubDescriptionView = view.findViewById(R.id.club_description);
         clubTitleView.setText(clubName);
         clubDescriptionView.setText(clubDescription);
 
         // Initialize RecyclerView
-        recyclerView = findViewById(R.id.recycler_view_polls);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView = view.findViewById(R.id.recycler_view_polls);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         // Prepare dummy data for polls
         pollList = new ArrayList<>();
@@ -73,16 +67,13 @@ public class ClubFeed extends AppCompatActivity {
                 .collect(Collectors.toList());
 
         // Set up the adapter with the filtered list
-        pollAdapter = new PollAdapter(this, filteredPollList, clubName);
+        pollAdapter = new PollAdapter(getContext(), filteredPollList, clubName);
         recyclerView.setAdapter(pollAdapter);
 
         // Set up the "Create a Post" button click listener
-        findViewById(R.id.post_btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openCreatePostFragment();
-            }
-        });
+        view.findViewById(R.id.post_btn).setOnClickListener(v -> openCreatePostFragment());
+
+        return view;
     }
 
     private void openCreatePostFragment() {
@@ -94,19 +85,11 @@ public class ClubFeed extends AppCompatActivity {
         args.putString("clubName", clubName);
         createFragment.setArguments(args);
 
-        findViewById(R.id.recycler_view_polls).setVisibility(View.GONE);
-        findViewById(R.id.club_head).setVisibility(View.GONE);
-
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragment_container, createFragment);
+        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+        transaction.replace(R.id.nav_host_fragment, createFragment);
         transaction.addToBackStack(null);  // So the user can navigate back
         transaction.commit();
-
-        findViewById(R.id.fragment_container).setVisibility(View.VISIBLE);
-    }
-
-    public void bckBtn(View v) {
-        finish();
     }
 }
+
 

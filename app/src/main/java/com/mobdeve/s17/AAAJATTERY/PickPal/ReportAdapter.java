@@ -14,6 +14,7 @@ import com.google.android.material.imageview.ShapeableImageView;
 import java.util.List;
 
 public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportViewHolder> {
+
     private List<ReportData> reportList;
     private OnReportActionListener actionListener;
 
@@ -21,6 +22,7 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
     public interface OnReportActionListener {
         void onDeleteClicked(int position);
         void onDismissClicked(int position);
+        void onViewMoreClicked(int position);  // New method for handling View More
     }
 
     public ReportAdapter(List<ReportData> reportList, OnReportActionListener actionListener) {
@@ -42,17 +44,21 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
         holder.userName.setText(report.getUserName());
         holder.postTitle.setText(report.getPostTitle());
 
-        // Set click listeners to call the listener methods
+        // Handle the View More button click
         holder.viewMoreButton.setOnClickListener(v -> {
-            // Handle view more action if needed
+            if (actionListener != null) {
+                actionListener.onViewMoreClicked(position);  // Notify the listener
+            }
         });
 
+        // Handle the Delete button click
         holder.deleteButton.setOnClickListener(v -> {
             if (actionListener != null) {
                 actionListener.onDeleteClicked(position);
             }
         });
 
+        // Handle the Dismiss button click
         holder.dismissButton.setOnClickListener(v -> {
             if (actionListener != null) {
                 actionListener.onDismissClicked(position);
@@ -81,5 +87,6 @@ public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ReportView
         }
     }
 }
+
 
 

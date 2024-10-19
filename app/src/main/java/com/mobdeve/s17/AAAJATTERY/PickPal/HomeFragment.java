@@ -44,7 +44,7 @@ public class HomeFragment extends Fragment {
         // 2-option word + image poll for "Manila Cafes"
         pollList.add(new PollData("labubu", "Do you like coffee?", 500,
                 Arrays.asList("Yes", "No"),
-                Arrays.asList("default_image", "default_image"), "Manila Cafes"));
+                Arrays.asList("default_image", "default_image"), "Feed"));
 
         // 3-option word poll for "Feed"
         pollList.add(new PollData("lalisa", "What’s your favorite season?", 250,
@@ -53,7 +53,7 @@ public class HomeFragment extends Fragment {
         // 3-option word + image poll for "Manila Cafes"
         pollList.add(new PollData("dina lily go", "What's your favorite fruit?", 300,
                 Arrays.asList("Apple", "Banana", "Orange"),
-                Arrays.asList("default_image", "default_image", "default_image"), "Manila Cafes"));
+                Arrays.asList("default_image", "default_image", "default_image"), "Feed"));
 
         // 4-option word poll for "Feed"
         pollList.add(new PollData("mila", "Where should we go for dinner?", 150,

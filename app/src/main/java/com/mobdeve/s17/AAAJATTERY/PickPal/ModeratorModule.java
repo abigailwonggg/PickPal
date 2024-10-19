@@ -1,5 +1,6 @@
 package com.mobdeve.s17.AAAJATTERY.PickPal;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -64,6 +65,23 @@ public class ModeratorModule extends AppCompatActivity implements ReportAdapter.
         showDismissDialog(position);
     }
 
+    @Override
+    public void onViewMoreClicked(int position) {
+        // Get the report data for the selected item
+        ReportData report = reportList.get(position);
+
+        // Create an intent to open ModeratorModuleViewMore activity
+        Intent intent = new Intent(ModeratorModule.this, ModeratorModuleViewMore.class);
+
+        // Pass relevant data to the ModeratorModuleViewMore activity
+        intent.putExtra("username", report.getUserName());
+        intent.putExtra("postTitle", report.getPostTitle());
+        intent.putExtra("imageResId", report.getUserIcon());  // Passing the image resource ID
+
+        // Start the activity
+        startActivity(intent);
+    }
+
     // Method to show the delete dialog
     private void showDeleteDialog(int position) {
         // Create and inflate the delete dialog
@@ -100,7 +118,7 @@ public class ModeratorModule extends AppCompatActivity implements ReportAdapter.
 
         // Set up Cancel and Dismiss buttons
         Button btnCancel = dialogView.findViewById(R.id.btn_cancel);
-        Button btnDismiss = dialogView.findViewById(R.id.btn_delete);
+        Button btnDismiss = dialogView.findViewById(R.id.btn_delete); // Change from btn_delete to btn_dismiss
 
         // Handle Cancel button click
         btnCancel.setOnClickListener(v -> dialog.dismiss());

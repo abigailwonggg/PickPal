@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/lilac"
-    tools:context=".ClubFeed">
+    tools:context=".ClubFeedFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -24,17 +24,15 @@
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/back_button"
-            android:onClick="bckBtn"
             android:contentDescription="@string/back_button" />
-
     </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
         android:id="@+id/club_head"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:orientation="vertical"
         android:layout_margin="25dp">
 
         <TextView
@@ -43,6 +41,7 @@
             android:layout_height="wrap_content"
             android:text="Club Name"
             android:fontFamily="@font/poppins_semibold"
+            android:lineHeight="45dp"
             android:textSize="50sp"
             android:textColor="@color/black"/>
 
@@ -68,7 +67,6 @@
 
     </LinearLayout>
 
-    <!-- RecyclerView for poll posts, constrained to fill remaining space -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_polls"
         android:layout_width="match_parent"
@@ -78,18 +76,7 @@
         android:layout_margin="25dp"
         android:scrollbars="vertical"
         app:layout_constraintTop_toBottomOf="@id/club_head"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <!-- This FrameLayout is where the CreateFragment will be loaded -->
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toBottomOf="@id/club_head"
-        android:visibility="gone" />
-
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

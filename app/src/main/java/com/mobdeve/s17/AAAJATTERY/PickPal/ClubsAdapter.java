@@ -1,15 +1,17 @@
 package com.mobdeve.s17.AAAJATTERY.PickPal;
 
 import android.content.Context;
-import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -29,7 +31,8 @@ public class ClubsAdapter extends RecyclerView.Adapter<ClubsAdapter.ClubViewHold
         public TextView clubName;
         public TextView clubDescription;
         public TextView clubMembers;
-        public Button joinButton, viewButton; // Add viewButton
+        public Button joinButton, viewButton;
+        public ImageView backButton;
 
         public ClubViewHolder(View itemView) {
             super(itemView);
@@ -38,7 +41,8 @@ public class ClubsAdapter extends RecyclerView.Adapter<ClubsAdapter.ClubViewHold
             clubDescription = itemView.findViewById(R.id.club_description);
             clubMembers = itemView.findViewById(R.id.member_count);
             joinButton = itemView.findViewById(R.id.join_button);
-            viewButton = itemView.findViewById(R.id.view_button); // Initialize viewButton
+            viewButton = itemView.findViewById(R.id.view_button);
+            backButton = itemView.findViewById(R.id.back_button);
         }
     }
 
@@ -60,10 +64,21 @@ public class ClubsAdapter extends RecyclerView.Adapter<ClubsAdapter.ClubViewHold
 
         // Handle view button click
         holder.viewButton.setOnClickListener(v -> {
-            Intent intent = new Intent(context, ClubFeed.class);  // ClubFeed is an Activity
-            intent.putExtra("clubName", club.getName());  // Pass the club name to ClubFeed
-            intent.putExtra("clubDescription", club.getDescription());  // Pass the club description to ClubFeed
-            context.startActivity(intent);
+            // Cast context to AppCompatActivity and start fragment transaction
+            AppCompatActivity activity = (AppCompatActivity) context;
+            ClubFeedFragment clubFeedFragment = new ClubFeedFragment();
+
+            // Pass the club name and description to the fragment
+            Bundle args = new Bundle();
+            args.putString("clubName", club.getName());
+            args.putString("clubDescription", club.getDescription());
+            clubFeedFragment.setArguments(args);
+
+            // Perform fragment transaction
+            activity.getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.nav_host_fragment, clubFeedFragment) // Replace with your container ID
+                    .addToBackStack(null)
+                    .commit();
         });
 
         // Handle join button click (same as before)
@@ -80,7 +95,6 @@ public class ClubsAdapter extends RecyclerView.Adapter<ClubsAdapter.ClubViewHold
             });
         }
     }
-
 
     @Override
     public int getItemCount() {
