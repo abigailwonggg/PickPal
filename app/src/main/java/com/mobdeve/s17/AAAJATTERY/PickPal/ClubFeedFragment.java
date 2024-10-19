@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -73,6 +74,15 @@ public class ClubFeedFragment extends Fragment {
         // Set up the "Create a Post" button click listener
         view.findViewById(R.id.post_btn).setOnClickListener(v -> openCreatePostFragment());
 
+        // Set up the back button click listener
+        ImageButton backButton = view.findViewById(R.id.back_button);
+        backButton.setOnClickListener(v -> {
+            // Navigate back to the previous fragment
+            if (getParentFragmentManager().getBackStackEntryCount() > 0) {
+                getParentFragmentManager().popBackStack();
+            }
+        });
+
         return view;
     }
 
@@ -91,5 +101,6 @@ public class ClubFeedFragment extends Fragment {
         transaction.commit();
     }
 }
+
 
 

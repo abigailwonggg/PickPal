@@ -105,13 +105,6 @@
                     android:textSize="12sp" />
             </LinearLayout>
 
-            <!-- Interaction Icon -->
-            <ImageView
-                android:id="@+id/comment_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="Comment"
-                android:src="@drawable/comment_btn" />
         </LinearLayout>
 
         <!-- Poll Options (Visible first with 2 options) -->

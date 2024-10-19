@@ -62,9 +62,9 @@ public class ProfileFragment extends Fragment {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
         recyclerView.setLayoutManager(gridLayoutManager);
 
-        // Initialize post list and adapter
+        // Initialize post list and adapter, passing the FragmentManager to the PostAdapter
         postList = new ArrayList<>();
-        postAdapter = new PostAdapter(postList);
+        postAdapter = new PostAdapter(postList, getParentFragmentManager()); // Fix here to pass FragmentManager
         recyclerView.setAdapter(postAdapter);
 
         // Populate the list with dummy data or fetch from your data source
@@ -93,7 +93,7 @@ public class ProfileFragment extends Fragment {
     }
 
     private void viewEditProfile() {
-        // This method starts the ModeratorModule activity
+        // This method starts the EditProfile activity
         Intent intent = new Intent(getActivity(), EditProfile.class);
         startActivity(intent);
     }
@@ -103,5 +103,4 @@ public class ProfileFragment extends Fragment {
         Intent intent = new Intent(getActivity(), WelcomeActivity.class);
         startActivity(intent);
     }
-
 }

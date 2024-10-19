@@ -1,5 +1,6 @@
 package com.mobdeve.s17.AAAJATTERY.PickPal;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,15 +8,18 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
 
     private List<PostData> postList;
+    private FragmentManager fragmentManager;  // To manage fragment transactions
 
-    public PostAdapter(List<PostData> postList) {
+    public PostAdapter(List<PostData> postList, FragmentManager fragmentManager) {
         this.postList = postList;
+        this.fragmentManager = fragmentManager;  // Pass FragmentManager in constructor
     }
 
     @NonNull
@@ -32,12 +36,27 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         holder.userPic.setImageResource(post.getUserPic());
         holder.itemText.setText(post.getText());
 
+        // View button click event to open ViewPostFragment
         holder.viewButton.setOnClickListener(v -> {
-            // Handle button click event
+            // Create a new instance of ViewPostFragment
+            ViewPostFragment viewPostFragment = new ViewPostFragment();
+
+            // Bundle to pass data (e.g., username and post text)
+            Bundle bundle = new Bundle();
+            bundle.putString("username", post.getUsername());
+            bundle.putString("postTitle", post.getText());
+            viewPostFragment.setArguments(bundle);
+
+            // Start the fragment transaction to navigate to ViewPostFragment
+            fragmentManager.beginTransaction()
+                    .replace(R.id.root, viewPostFragment)  // Replace with the container ID of your fragment
+                    .addToBackStack(null)  // Add to back stack so user can navigate back
+                    .commit();
         });
 
-        holder.editButton.setOnClickListener(v -> {
-            // Handle button click event
+        // Delete button click event (if required later)
+        holder.delButton.setOnClickListener(v -> {
+            // Handle the delete functionality (if needed)
         });
     }
 
@@ -51,7 +70,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         TextView username;
         TextView itemText;
         Button viewButton;
-        Button editButton;
+        Button delButton;
 
         public PostViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -59,8 +78,9 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             username = itemView.findViewById(R.id.username);
             itemText = itemView.findViewById(R.id.post_title);
             viewButton = itemView.findViewById(R.id.view_button);
-            editButton = itemView.findViewById(R.id.edit_button);
+            delButton = itemView.findViewById(R.id.del_button);
         }
     }
 }
+
 
