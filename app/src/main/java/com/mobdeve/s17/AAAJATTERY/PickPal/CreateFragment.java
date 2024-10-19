@@ -30,8 +30,7 @@ public class CreateFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_create, container, false);
 
-        // Initialize views
-        option3 = view.findViewById(R.id.option3);
+       option3 = view.findViewById(R.id.option3);
         option4 = view.findViewById(R.id.option4);
         btnAddOption = view.findViewById(R.id.btn_add_option);
         btnPostPoll = view.findViewById(R.id.btn_post_poll);
@@ -46,18 +45,16 @@ public class CreateFragment extends Fragment {
 
         // Spinner for selecting clubs
         spinnerClub = view.findViewById(R.id.spinner_club);
-        String[] clubs = {"Select Club", "Club A", "Club B", "Club C"};
+        String[] clubs = {"Select Club", "Feed", "Anime", "Music","Horror Movies","Manila Cafes","Justin Bieber Fans Club"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(),
                 android.R.layout.simple_spinner_item, clubs);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerClub.setAdapter(adapter);
 
-        // Set OnItemSelectedListener for the spinner
         spinnerClub.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedClub = parent.getItemAtPosition(position).toString();
-                // Do something with the selected club (e.g., display it or use it later)
                 Toast.makeText(getContext(), "Selected Club: " + selectedClub, Toast.LENGTH_SHORT).show();
             }
 
@@ -67,43 +64,39 @@ public class CreateFragment extends Fragment {
             }
         });
 
-        // Set OnClickListeners for buttons
         btnAddOption.setOnClickListener(v -> addOption());
 
         removeOption3.setOnClickListener(v -> {
             option3.setVisibility(View.GONE);
-            option3Text.setText("");  // Clear text when option is removed
+            option3Text.setText("");
         });
 
         removeOption4.setOnClickListener(v -> {
             option4.setVisibility(View.GONE);
-            option4Text.setText("");  // Clear text when option is removed
+            option4Text.setText("");
         });
 
-        // Set OnClickListeners for buttons
         btnAddOption.setOnClickListener(v -> addOption());
 
         removeOption3.setOnClickListener(v -> {
             option3.setVisibility(View.GONE);
-            option3Text.setText("");  // Clear text when option is removed
-            checkAddButtonVisibility(); // Check visibility after removing
+            option3Text.setText("");
+            checkAddButtonVisibility();
         });
 
         removeOption4.setOnClickListener(v -> {
             option4.setVisibility(View.GONE);
-            option4Text.setText("");  // Clear text when option is removed
-            checkAddButtonVisibility(); // Check visibility after removing
+            option4Text.setText("");
+            checkAddButtonVisibility();
         });
 
         btnPostPoll.setOnClickListener(v -> postPoll());
 
-        // Check button visibility initially
         checkAddButtonVisibility();
 
         return view;
     }
 
-    // Function to add options
     private void addOption() {
         if (option3.getVisibility() == View.GONE) {
             option3.setVisibility(View.VISIBLE);
@@ -111,33 +104,26 @@ public class CreateFragment extends Fragment {
             option4.setVisibility(View.VISIBLE);
         }
 
-        // Check button visibility after adding
         checkAddButtonVisibility();
     }
 
-    // Function to handle poll posting
     private void postPoll() {
-        // Retrieve user input
         String option1 = option1Text.getText().toString().trim();
         String option2 = option2Text.getText().toString().trim();
         String option3 = option3Text.getText().toString().trim();
         String option4 = option4Text.getText().toString().trim();
 
-        // Check if required fields are filled (basic validation)
         if (option1.isEmpty() || option2.isEmpty()) {
             Toast.makeText(getContext(), "Please fill at least the first two options.", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // Code to handle poll posting goes here
-        // You could send data to your backend or update the UI accordingly
         Toast.makeText(getContext(), "Poll posted with options: " + option1 + ", " + option2, Toast.LENGTH_SHORT).show();
 
         Intent i = new Intent(getActivity(), CreateSuccess.class);
         startActivity(i);
     }
 
-    // Function to check and set visibility of the add button
     private void checkAddButtonVisibility() {
         if (option3.getVisibility() == View.VISIBLE && option4.getVisibility() == View.VISIBLE) {
             btnAddOption.setVisibility(View.GONE);
