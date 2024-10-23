@@ -10,6 +10,7 @@ import android.widget.Toast;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -84,14 +85,11 @@ public class PollAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         });
 
         // Set up click listener for comment_icon to navigate to ViewPostFragment
-        holder.itemView.findViewById(R.id.comment_icon).setOnClickListener(new View.OnClickListener() {
+        holder.itemView.findViewById(R.id.report_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Navigating to ViewPostFragment", Toast.LENGTH_SHORT).show();
-                ((MainActivity) context).getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.root, new ViewPostFragment()) // Adjust R.id.fragment_container to your actual container ID
-                        .addToBackStack(null)
-                        .commit();
+                Button reportButton = (Button) v;
+                reportButton.setBackground(ContextCompat.getDrawable(context, R.drawable.grey_btn));
             }
         });
     }
