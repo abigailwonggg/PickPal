@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/profile_bg"
@@ -34,8 +35,19 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingTop="50dp"
-            android:layout_marginTop="180dp"
+            android:layout_marginTop="95dp"
             android:layout_alignParentStart="true">
+
+            <!-- Profile Picture -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/profile_image"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:src="@drawable/user_pic"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                app:shapeAppearanceOverlay="@style/CircleImageView"
+                android:clickable="true"/>
 
             <!-- First Name Input -->
             <TextView
